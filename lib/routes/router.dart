@@ -6,6 +6,12 @@ import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/settings/
 import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/users/user_profile_page.dart';
 import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/users/users_page.dart';
 
+/// navigate
+/// context.router.push(SinglePostRoute(postId: id)
+
+/// navigate to another tab
+/// context.navigateTo(PostsRouter(children: SinglePostRoute(postId: id)))
+
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
