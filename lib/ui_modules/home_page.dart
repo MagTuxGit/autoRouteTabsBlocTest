@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route_test/routes/router.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/router.gr.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class HomePage extends StatelessWidget {

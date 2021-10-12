@@ -1,13 +1,13 @@
+import 'package:auto_route_test/routes/post_guard.dart';
+import 'package:auto_route_test/routes/router.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/post_checker.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/router.gr.dart';
 
 void main() => runApp(AppWidget());
 
 class AppWidget extends StatelessWidget {
   AppWidget({Key? key}) : super(key: key);
 
-  final _appRouter = AppRouter(checkIfPostExists: CheckIfPostExists());
+  final _appRouter = AppRouter(postGuard: PostGuard());
 
   @override
   Widget build(BuildContext context) {

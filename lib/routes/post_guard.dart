@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/data/app_data.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/router.gr.dart';
+import 'package:auto_route_test/data/app_data.dart';
+import 'package:auto_route_test/routes/router.gr.dart';
 
-class CheckIfPostExists extends AutoRouteGuard {
+class PostGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) async {
     final postId = resolver.route.pathParams.get("postId");

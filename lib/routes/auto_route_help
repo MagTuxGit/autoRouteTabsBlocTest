@@ -1,0 +1,14 @@
+/// router
+/// AutoRouter.of(context)
+/// context.router
+
+/// navigate
+/// context.pushRoute(SinglePostRoute(postId: id))
+/// context.router.push(SinglePostRoute(postId: id)
+/// context.router.pushNamed("/posts")
+
+/// navigate to another tab
+/// context.navigateTo(PostsRouter(children: SinglePostRoute(postId: id)))
+/// context.pushRoute(AccountRouter(children: [AccountRoute(), AccountSettingsRoute()]));
+
+/// context.router.root.push();

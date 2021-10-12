@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route_test/data/app_data.dart';
+import 'package:auto_route_test/routes/router.gr.dart';
+import 'package:auto_route_test/ui_modules/posts/posts_cubit.dart';
+import 'package:auto_route_test/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/data/app_data.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/posts/posts_cubit.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/router.gr.dart';
-import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/widgets.dart';
 
 class PostsPage extends StatelessWidget {
   PostsPage({Key? key}) : super(key: key);

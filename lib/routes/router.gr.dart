@@ -7,24 +7,24 @@
 import 'package:auto_route/auto_route.dart' as _i10;
 import 'package:flutter/material.dart' as _i11;
 
-import '../home_page.dart' as _i1;
-import '../not_found/page.dart' as _i2;
-import '../posts/posts_page.dart' as _i6;
-import '../posts/posts_wrapper_page.dart' as _i3;
-import '../posts/single_post_page.dart' as _i7;
-import '../settings/settings_page.dart' as _i5;
-import '../users/user_profile_page.dart' as _i9;
-import '../users/users_page.dart' as _i8;
-import '../users/users_wrapper_page.dart' as _i4;
-import 'post_checker.dart' as _i12;
+import '../ui_modules/home_page.dart' as _i1;
+import '../ui_modules/not_found/page.dart' as _i2;
+import '../ui_modules/posts/posts_page.dart' as _i6;
+import '../ui_modules/posts/posts_wrapper_page.dart' as _i3;
+import '../ui_modules/posts/single_post_page.dart' as _i7;
+import '../ui_modules/settings/settings_page.dart' as _i5;
+import '../ui_modules/users/user_profile_page.dart' as _i9;
+import '../ui_modules/users/users_page.dart' as _i8;
+import '../ui_modules/users/users_wrapper_page.dart' as _i4;
+import 'post_guard.dart' as _i12;
 
 class AppRouter extends _i10.RootStackRouter {
   AppRouter(
       {_i11.GlobalKey<_i11.NavigatorState>? navigatorKey,
-      required this.checkIfPostExists})
+      required this.postGuard})
       : super(navigatorKey);
 
-  final _i12.CheckIfPostExists checkIfPostExists;
+  final _i12.PostGuard postGuard;
 
   @override
   final Map<String, _i10.PageFactory> pagesMap = {
@@ -86,7 +86,7 @@ class AppRouter extends _i10.RootStackRouter {
           _i10.RouteConfig(PostsRouter.name, path: 'posts', children: [
             _i10.RouteConfig(PostsRoute.name, path: ''),
             _i10.RouteConfig(SinglePostRoute.name,
-                path: ':postId', guards: [checkIfPostExists]),
+                path: ':postId', guards: [postGuard]),
             _i10.RouteConfig('*#redirect',
                 path: '*', redirectTo: '', fullMatch: true)
           ]),
