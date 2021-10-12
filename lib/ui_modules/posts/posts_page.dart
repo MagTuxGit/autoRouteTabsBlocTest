@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_test/data/app_data.dart';
+import 'package:auto_route_test/data/app_state.dart';
 import 'package:auto_route_test/routes/router.gr.dart';
 import 'package:auto_route_test/ui_modules/posts/posts_cubit.dart';
-import 'package:auto_route_test/widgets.dart';
+import 'package:auto_route_test/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,6 +15,8 @@ class PostsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = context.watch<AppState>();
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -21,6 +24,12 @@ class PostsPage extends StatelessWidget {
         title: const Text('Posts'),
         centerTitle: true,
         leading: const AutoBackButton(),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () => appState.logout(),
+          ),
+        ],
       ),
       body: BlocBuilder<PostsCubit, int>(builder: (context, postsCount) {
         return ListView.builder(
@@ -42,6 +51,7 @@ class PostsPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
+              heroTag: 'posts_add',
               child: const Icon(Icons.add),
               onPressed: () {
                 context.read<PostsCubit>().increment();
@@ -51,6 +61,7 @@ class PostsPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
+              heroTag: 'posts_remove',
               child: const Icon(Icons.remove),
               onPressed: () => context.read<PostsCubit>().decrement(),
             ),

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_test/data/app_data.dart';
 import 'package:auto_route_test/routes/router.gr.dart';
 import 'package:auto_route_test/ui_modules/users/users_cubit.dart';
-import 'package:auto_route_test/widgets.dart';
+import 'package:auto_route_test/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,6 +46,7 @@ class UsersPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
+              heroTag: 'users_add',
               child: const Icon(Icons.add),
               onPressed: () {
                 context.read<UsersCubit>().increment();
@@ -55,6 +56,7 @@ class UsersPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
+              heroTag: 'users_remove',
               child: const Icon(Icons.remove),
               onPressed: () => context.read<UsersCubit>().decrement(),
             ),

@@ -17,6 +17,5 @@ class PostGuard extends AutoRouteGuard {
 
 Post? checkIfPostExists(int postId) {
   final posts = Post.posts;
-  //return posts.length > postId ? posts[postId] : null;
-  return null;
+  return posts.length > postId ? posts[postId] : null;
 }
