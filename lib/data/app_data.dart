@@ -22,8 +22,8 @@ class User {
 
   User(this.color, this.name, this.id);
 
-  static List<Post> users = [
+  static List<User> users = [
     for (int i = 0; i < 50; i++)
-      Post(Colors.primaries[Random().nextInt(Colors.primaries.length)], 'User $i', i)
+      User(Colors.primaries[Random().nextInt(Colors.primaries.length)], 'User $i', i)
   ];
 }

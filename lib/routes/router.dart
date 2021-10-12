@@ -6,6 +6,7 @@ import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/posts/sin
 import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/settings/settings_page.dart';
 import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/users/user_profile_page.dart';
 import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/users/users_page.dart';
+import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/users/users_wrapper_page.dart';
 
 /// router
 /// AutoRouter.of(context)
@@ -40,7 +41,7 @@ import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/users/use
         AutoRoute(
           path: 'users',
           name: 'UsersRouter',
-          page: EmptyRouterPage,
+          page: UsersWrapperPage,
           children: [
             AutoRoute(path: '', page: UsersPage),
             AutoRoute(path: ':userId', page: UserProfilePage),
