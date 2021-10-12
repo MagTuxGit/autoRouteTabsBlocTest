@@ -9,13 +9,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      appBarBuilder: (_, tabsRouter) => AppBar(
-        backgroundColor: Colors.indigo,
-        title: const Text('FlutterBottomNav'),
-        centerTitle: true,
-        leading: const AutoBackButton(),
-      ),
-      backgroundColor: Colors.indigo,
+      // appBarBuilder: (_, tabsRouter) => AppBar(
+      //   backgroundColor: Colors.teal,
+      //   title: Text(_appBarTitle(tabsRouter.activeIndex)),
+      //   centerTitle: true,
+      //   leading: const AutoBackButton(),
+      // ),
+      backgroundColor: Colors.teal,
       routes: const [
         PostsRouter(),
         UsersRouter(),

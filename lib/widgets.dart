@@ -17,7 +17,7 @@ class PostTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTileTap,
       child: Card(
-        margin: const EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.all(8),
         color: tileColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(

@@ -1,26 +1,29 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class Post {
-  static final posts = [
-    Post(Colors.amberAccent, 'Post 1', 1),
-    Post(Colors.blue, 'Post 2', 2),
-    Post(Colors.pinkAccent, 'Post 3', 3),
-  ];
   final Color color;
   final String title;
   final int id;
 
   Post(this.color, this.title, this.id);
+
+  static List<Post> posts = [
+    for (int i = 0; i < 50; i++)
+      Post(Colors.primaries[Random().nextInt(Colors.primaries.length)], 'Post $i', i)
+  ];
 }
 
 class User {
-  static final users = [
-    User(Colors.amberAccent, 1),
-    User(Colors.blue, 2),
-    User(Colors.pinkAccent, 3),
-  ];
   final Color color;
+  final String name;
   final int id;
 
-  User(this.color, this.id);
+  User(this.color, this.name, this.id);
+
+  static List<Post> users = [
+    for (int i = 0; i < 50; i++)
+      Post(Colors.primaries[Random().nextInt(Colors.primaries.length)], 'User $i', i)
+  ];
 }

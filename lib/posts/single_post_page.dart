@@ -11,7 +11,7 @@ class SinglePostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final post = Post.posts[postId - 1];
+    final post = Post.posts[postId];
     return Scaffold(
       backgroundColor: post.color,
       body: Center(
