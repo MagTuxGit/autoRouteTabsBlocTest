@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/post_checker.dart';
 import 'package:flutter_bottom_navigation_with_nested_routing_tutorial/routes/router.gr.dart';
 
 void main() => runApp(AppWidget());
@@ -6,7 +7,7 @@ void main() => runApp(AppWidget());
 class AppWidget extends StatelessWidget {
   AppWidget({Key? key}) : super(key: key);
 
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(checkIfPostExists: CheckIfPostExists());
 
   @override
   Widget build(BuildContext context) {
