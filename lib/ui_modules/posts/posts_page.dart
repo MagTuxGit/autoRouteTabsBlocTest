@@ -41,7 +41,7 @@ class PostsPage extends StatelessWidget {
                   tileColor: post.color,
                   postTitle: post.title,
                   onTileTap: () =>
-                      context.router.push(SinglePostRoute(postId: post.id)));
+                      context.router.push(SinglePostTabRoute(postId: post.id)));
             });
       }),
       floatingActionButton: Column(

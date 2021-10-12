@@ -1,11 +1,13 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_test/data/app_data.dart';
+import 'package:auto_route_test/routes/router.gr.dart';
 import 'package:auto_route_test/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatelessWidget {
   final int userId;
+
   const UserProfilePage({
     Key? key,
     @PathParam() required this.userId,
@@ -28,6 +30,9 @@ class UserProfilePage extends StatelessWidget {
             UserAvatar(
               avatarColor: Colors.white,
               username: 'user${user.id}',
+              onAvatarTap: () => context.router.root.push(
+                UserProfileRoute(userId: user.id),
+              ),
             )
           ],
         ),

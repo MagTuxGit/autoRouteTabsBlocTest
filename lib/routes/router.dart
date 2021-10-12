@@ -27,7 +27,11 @@ import 'package:auto_route_test/ui_modules/users/users_wrapper_page.dart';
           page: PostsWrapperPage,
           children: [
             AutoRoute(path: '', page: PostsPage),
-            AutoRoute(path: ':postId', guards: [PostGuard], page: SinglePostPage),
+            AutoRoute(
+                path: ':postId',
+                name: 'SinglePostTabRoute',
+                guards: [PostGuard],
+                page: SinglePostPage),
             RedirectRoute(path: '*', redirectTo: ''),
           ],
         ),
@@ -37,7 +41,10 @@ import 'package:auto_route_test/ui_modules/users/users_wrapper_page.dart';
           page: UsersWrapperPage,
           children: [
             AutoRoute(path: '', page: UsersPage),
-            AutoRoute(path: ':userId', page: UserProfilePage),
+            AutoRoute(
+                path: ':userId',
+                name: 'UserProfileTabRoute',
+                page: UserProfilePage),
             RedirectRoute(path: '*', redirectTo: ''),
           ],
         ),
@@ -48,6 +55,8 @@ import 'package:auto_route_test/ui_modules/users/users_wrapper_page.dart';
         )
       ],
     ),
+    AutoRoute(path: 'post:postId', guards: [PostGuard], page: SinglePostPage),
+    AutoRoute(path: 'user:userId', page: UserProfilePage),
     AutoRoute(path: '404', page: NotFoundPage),
   ],
 )

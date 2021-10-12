@@ -32,7 +32,7 @@ class UsersPage extends StatelessWidget {
                 avatarColor: user.color,
                 username: user.name,
                 onAvatarTap: () => context.router.push(
-                  UserProfileRoute(
+                  UserProfileTabRoute(
                     userId: user.id,
                   ),
                 ),
